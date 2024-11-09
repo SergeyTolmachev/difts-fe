@@ -2,11 +2,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 20px;
+  color: #000000;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1px;
 }
 
-.gift_icon {
+.currency_circle {
+  color: #007bff;
+  border-radius: 30px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #007bff;
+  font-weight: 600;
+  margin-bottom: 110px;
+
+  img {
+    margin-right: 5px;
+  }
+}
+
+.gift_img {
   font-size: 140px;
   width: 200px;
   height: 120px;
