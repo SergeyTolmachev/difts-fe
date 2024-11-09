@@ -1,0 +1,48 @@
+.gift_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.gift_icon {
+  font-size: 140px;
+  width: 200px;
+  height: 120px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.gift_title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.gift_description {
+  font-size: 17px;
+  color: #707579;
+  margin-bottom: 24px;
+}
+
+.send_gift_button {
+  padding: 10px 20px;
+  background-color: #4378ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 50px;
+  width: 326px;
+  margin-bottom: 220px;
+  font-size: 17px;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}

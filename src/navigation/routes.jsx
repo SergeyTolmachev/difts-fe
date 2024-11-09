@@ -1,9 +1,9 @@
-import { IndexPage } from "@/pages/IndexPage/IndexPage.jsx";
+// import { IndexPage } from "@/pages/IndexPage/IndexPage.jsx";
 import { InitDataPage } from "@/pages/InitDataPage.jsx";
 import { LaunchParamsPage } from "@/pages/LaunchParamsPage.jsx";
 import { ThemeParamsPage } from "@/pages/ThemeParamsPage.jsx";
 import { TONConnectPage } from "@/pages/TONConnectPage/TONConnectPage.jsx";
-import { HomePage } from "@/pages/HomePage/HomePage.jsx";
+// import { HomePage } from "@/pages/HomePage/HomePage.jsx";
 /**
  * @typedef {object} Route
  * @property {string} path
@@ -16,8 +16,8 @@ import { HomePage } from "@/pages/HomePage/HomePage.jsx";
  * @type {Route[]}
  */
 export const routes = [
-  { path: "/", Component: HomePage },
-  { path: "/home", Component: IndexPage },
+  // { path: "/home", Component: IndexPage },
+  // { path: "/", Component: HomePage },
   { path: "/init-data", Component: InitDataPage, title: "Init Data" },
   { path: "/theme-params", Component: ThemeParamsPage, title: "Theme Params" },
   {
@@ -26,7 +26,7 @@ export const routes = [
     title: "Launch Params",
   },
   {
-    path: "/ton-connect",
+    path: "/",
     Component: TONConnectPage,
     title: "TON Connect",
     icon: (
