@@ -1,5 +1,5 @@
-import { openLink } from '@telegram-apps/sdk-react';
-import { TonConnectButton, useTonWallet } from '@tonconnect/ui-react';
+import { openLink } from "@telegram-apps/sdk-react";
+import { TonConnectButton, useTonWallet } from "@tonconnect/ui-react";
 import {
   Avatar,
   Cell,
@@ -9,15 +9,17 @@ import {
   Section,
   Text,
   Title,
-} from '@telegram-apps/telegram-ui';
+} from "@telegram-apps/telegram-ui";
 
-import { DisplayData } from '@/components/DisplayData/DisplayData.jsx';
-import { Page } from '@/components/Page.jsx';
+import { DisplayData } from "@/components/DisplayData/DisplayData.jsx";
+import { Page } from "@/components/Page.jsx";
+import { useWalletStore } from "@/stores/WalletStoreProvider";
 
-import './TONConnectPage.css';
+import "./TONConnectPage.css";
 
 export function TONConnectPage() {
   const wallet = useTonWallet();
+  const walletStore = useWalletStore();
 
   if (!wallet) {
     return (
@@ -28,10 +30,10 @@ export function TONConnectPage() {
           description={
             <>
               <Text>
-                To display the data related to the TON Connect, it is required to connect your
-                wallet
+                To display the data related to the TON Connect, it is required
+                to connect your wallet
               </Text>
-              <TonConnectButton className="ton-connect-page__button"/>
+              <TonConnectButton className="ton-connect-page__button" />
             </>
           }
         />
@@ -39,26 +41,34 @@ export function TONConnectPage() {
     );
   }
 
-  const {
-    account: { chain, publicKey, address },
-    device: {
-      appName,
-      appVersion,
-      maxProtocolVersion,
-      platform,
-      features,
-    },
-  } = wallet;
+  walletStore.setWalletData({
+    address: wallet.account.address,
+    chain: wallet.account.chain,
+    publicKey: wallet.account.publicKey,
+    appName: wallet.device.appName,
+    appVersion: wallet.device.appVersion,
+    maxProtocolVersion: wallet.device.maxProtocolVersion,
+    platform: wallet.device.platform,
+    features: wallet.device.features,
+    name: wallet.name,
+    imageUrl: wallet.imageUrl,
+    aboutUrl: wallet.aboutUrl,
+  });
 
   return (
     <Page>
       <List>
-        {'imageUrl' in wallet && (
+        {"imageUrl" in wallet && (
           <>
             <Section>
               <Cell
                 before={
-                  <Avatar src={wallet.imageUrl} alt="Provider logo" width={60} height={60}/>
+                  <Avatar
+                    src={wallet.imageUrl}
+                    alt="Provider logo"
+                    width={60}
+                    height={60}
+                  />
                 }
                 after={<Navigation>About wallet</Navigation>}
                 subtitle={wallet.appName}
@@ -70,30 +80,33 @@ export function TONConnectPage() {
                 <Title level="3">{wallet.name}</Title>
               </Cell>
             </Section>
-            <TonConnectButton className="ton-connect-page__button-connected"/>
+            <TonConnectButton className="ton-connect-page__button-connected" />
           </>
         )}
         <DisplayData
           header="Account"
           rows={[
-            { title: 'Address', value: address },
-            { title: 'Chain', value: chain },
-            { title: 'Public Key', value: publicKey },
+            { title: "Address", value: wallet.account.address },
+            { title: "Chain", value: wallet.account.chain },
+            { title: "Public Key", value: wallet.account.publicKey },
           ]}
         />
         <DisplayData
           header="Device"
           rows={[
-            { title: 'App Name', value: appName },
-            { title: 'App Version', value: appVersion },
-            { title: 'Max Protocol Version', value: maxProtocolVersion },
-            { title: 'Platform', value: platform },
+            { title: "App Name", value: wallet.device.appName },
+            { title: "App Version", value: wallet.device.appVersion },
             {
-              title: 'Features',
-              value: features
-                .map(f => typeof f === 'object' ? f.name : undefined)
-                .filter(v => v)
-                .join(', '),
+              title: "Max Protocol Version",
+              value: wallet.device.maxProtocolVersion,
+            },
+            { title: "Platform", value: wallet.device.platform },
+            {
+              title: "Features",
+              value: wallet.device.features
+                .map((f) => (typeof f === "object" ? f.name : undefined))
+                .filter((v) => v)
+                .join(", "),
             },
           ]}
         />
