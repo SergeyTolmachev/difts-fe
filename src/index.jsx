@@ -7,7 +7,6 @@ import { init } from "@/init.js";
 import { WalletStoreProvider } from "@/stores/WalletStoreProvider";
 
 import "@telegram-apps/telegram-ui/dist/styles.css";
-import "./index.css";
 
 // Mock the environment in case, we are outside Telegram.
 import "./mockEnv.js";
