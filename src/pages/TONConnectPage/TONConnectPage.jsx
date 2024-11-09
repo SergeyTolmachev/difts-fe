@@ -52,9 +52,7 @@ export function TONConnectPage() {
 
   return (
     <Page>
-      {/* <div className={styles.page_container}> */}
       <GiftComponent />
-      {/* </div> */}
     </Page>
   );
 }
