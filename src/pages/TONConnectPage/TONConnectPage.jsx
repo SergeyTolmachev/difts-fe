@@ -53,6 +53,7 @@ export function TONConnectPage() {
   return (
     <Page>
       <GiftComponent />
+      <TonConnectButton className={styles.connect_wallet_button} />
     </Page>
   );
 }

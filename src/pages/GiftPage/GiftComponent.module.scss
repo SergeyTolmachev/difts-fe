@@ -70,6 +70,11 @@
 .country_list {
   max-height: 300px;
   overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.country_list::-webkit-scrollbar {
+  display: none;
 }
 
 .country_item {
