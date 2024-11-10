@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { BottomModal } from "../../components/Modal/BottomModal";
+import { useNavigate } from "react-router-dom";
 
 const fetchCountries = async () => {
   const headers = {
@@ -17,7 +18,6 @@ const fetchCountries = async () => {
     const response = await axios.get("http://134.209.85.35/api/countries", {
       headers,
     });
-    console.log(response.data, 999999);
     return response.data;
   } catch (error) {
     console.error("Ошибка при получении стран:", error);
@@ -28,6 +28,7 @@ const fetchCountries = async () => {
 export const GiftComponent = () => {
   const [tonPrice, setTonPrice] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTonPrice = async () => {
@@ -54,6 +55,10 @@ export const GiftComponent = () => {
   if (countriesError)
     return <div>Ошибка при получении стран: {countriesError.message}</div>;
 
+  const handleCountrySelect = (countryCode) => {
+    navigate(`/products/${countryCode}`);
+  };
+
   return (
     <div className={styles.gift_container}>
       <div className={styles.currency_circle}>
@@ -73,7 +78,11 @@ export const GiftComponent = () => {
       <BottomModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className={styles.country_list}>
           {countries.data.map((country) => (
-            <div className={styles.country_item} key={country.code}>
+            <div
+              className={styles.country_item}
+              key={country.code}
+              onClick={() => handleCountrySelect(country.code)}
+            >
               {country.name}
             </div>
           ))}

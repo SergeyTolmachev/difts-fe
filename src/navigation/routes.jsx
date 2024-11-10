@@ -3,7 +3,8 @@ import { InitDataPage } from "@/pages/InitDataPage.jsx";
 import { LaunchParamsPage } from "@/pages/LaunchParamsPage.jsx";
 import { ThemeParamsPage } from "@/pages/ThemeParamsPage.jsx";
 import { TONConnectPage } from "@/pages/TONConnectPage/TONConnectPage.jsx";
-// import { HomePage } from "@/pages/HomePage/HomePage.jsx";
+import { ProductsPage } from "@/pages/ProductsPage/ProductsPage.jsx";
+
 /**
  * @typedef {object} Route
  * @property {string} path
@@ -47,5 +48,10 @@ export const routes = [
         />
       </svg>
     ),
+  },
+  {
+    path: "/products/:countryCode",
+    Component: ProductsPage,
+    title: "Products",
   },
 ];
