@@ -4,6 +4,7 @@ import { TonConnectButton } from "@tonconnect/ui-react";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { BottomModal } from "../../components/Modal/BottomModal";
 
 // Функция для получения стран
 const fetchCountries = async () => {
@@ -13,6 +14,7 @@ const fetchCountries = async () => {
 
 export const GiftComponent = () => {
   const [tonPrice, setTonPrice] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchTonPrice = async () => {
@@ -49,13 +51,22 @@ export const GiftComponent = () => {
         {tonPrice}
       </div>
       <div className={styles.gift_img}>🎁</div>
-      <div className={styles.gift_title}>Список стран</div>
-      <ul className={styles.gift_description}>
-        {countries.map((country) => (
-          <li key={country.id}>{country.name}</li>
-        ))}
-      </ul>
-      <button className={styles.send_gift_button}>Send a gift</button>
+      <div className={styles.gift_title}>Title</div>
+      <div className={styles.gift_description}>description</div>
+
+      <button
+        className={styles.send_gift_button}
+        onClick={() => setIsModalOpen(true)}
+      >
+        Send a gift
+      </button>
+      <BottomModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <ul>
+          {countries.map((country) => (
+            <li key={country.id}>{country.name}</li>
+          ))}
+        </ul>
+      </BottomModal>
       <TonConnectButton className={styles.connect_wallet_button} />
     </div>
   );
