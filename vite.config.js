@@ -2,7 +2,6 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
-import mkcert from "vite-plugin-mkcert";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,9 +10,7 @@ export default defineConfig({
     // Allows using React dev server along with building a React application with Vite.
     // https://npmjs.com/package/@vitejs/plugin-react-swc
     react(),
-    // Create a custom SSL certificate valid for the local machine.
-    // https://www.npmjs.com/package/vite-plugin-mkcert
-    mkcert(),
+    // mkcert(),
   ],
   publicDir: "./public",
   server: {

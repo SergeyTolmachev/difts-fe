@@ -14,10 +14,10 @@ const fetchCountries = async () => {
   };
 
   try {
-    const response = await axios.get("http://localhost:3000/countries", {
-      // const response = await axios.get("http://134.209.85.35/api/countries", {
+    const response = await axios.get("http://134.209.85.35/api/countries", {
       headers,
     });
+    console.log(response.data, 999999);
     return response.data;
   } catch (error) {
     console.error("Ошибка при получении стран:", error);
@@ -72,8 +72,8 @@ export const GiftComponent = () => {
       </button>
       <BottomModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className={styles.country_list}>
-          {countries.map((country) => (
-            <div className={styles.country_item} key={country.id}>
+          {countries.data.map((country) => (
+            <div className={styles.country_item} key={country.code}>
               {country.name}
             </div>
           ))}
