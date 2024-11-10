@@ -70,6 +70,7 @@ export const GiftComponent = () => {
       </div>
       <div className={styles.gift_img}>🎁</div>
       <div className={styles.gift_title}>Send joy instantly!</div>
+      <br />
       {/* <div className={styles.gift_description}>description</div> */}
 
       <button
