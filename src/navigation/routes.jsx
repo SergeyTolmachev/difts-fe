@@ -4,6 +4,7 @@ import { LaunchParamsPage } from "@/pages/LaunchParamsPage.jsx";
 import { ThemeParamsPage } from "@/pages/ThemeParamsPage.jsx";
 import { TONConnectPage } from "@/pages/TONConnectPage/TONConnectPage.jsx";
 import { ProductsPage } from "@/pages/ProductsPage/ProductsPage.jsx";
+import {GiftComponent} from "@/pages/GiftPage/GiftComponent.jsx";
 
 /**
  * @typedef {object} Route
@@ -17,7 +18,7 @@ import { ProductsPage } from "@/pages/ProductsPage/ProductsPage.jsx";
  * @type {Route[]}
  */
 export const routes = [
-  // { path: "/home", Component: IndexPage },
+  // { path: "/main", Component: MainPage },
   // { path: "/", Component: HomePage },
   { path: "/init-data", Component: InitDataPage, title: "Init Data" },
   { path: "/theme-params", Component: ThemeParamsPage, title: "Theme Params" },
@@ -48,6 +49,11 @@ export const routes = [
         />
       </svg>
     ),
+  },
+  {
+    path: "/products",
+    Component: GiftComponent,
+    title: "Products",
   },
   {
     path: "/products/:countryCode",
