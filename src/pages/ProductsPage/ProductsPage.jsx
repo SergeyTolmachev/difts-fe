@@ -2,7 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import ProductList from "@/components/ProductList/ProductList";
+import ProductItem from "@/pages/ProductItem/ProductItem";
+import styles from "./ProductsPage.module.scss";
 
 const fetchProducts = async (countryCode) => {
   const headers = {
@@ -21,7 +22,7 @@ const fetchProducts = async (countryCode) => {
     return response.data;
   } catch (error) {
     console.error("Ошибка при получении продуктов:", error);
-    throw error; // Пробрасываем ошибку дальше
+    throw error;
   }
 };
 
@@ -37,13 +38,19 @@ export const ProductsPage = () => {
     queryFn: () => fetchProducts(countryCode),
   });
 
-  if (isLoading) return <div>Загрузка продуктов...</div>;
-  if (error) return <div>Ошибка при получении продуктов: {error.message}</div>;
+  if (isLoading)
+    return <div className={styles.loading_message}>Загрузка продуктов...</div>;
+  if (error)
+    return (
+      <div className={styles.error_message}>
+        Ошибка при получении продуктов: {error.message}
+      </div>
+    );
 
   return (
-    <div>
-      <h2>Продукты для страны: {countryCode}</h2>
-      <ProductList products={products.data} />
+    <div className={styles.page_container}>
+      <h2 className={styles.page_title}>Продукты для страны: {countryCode}</h2>
+      <ProductItem products={products.data} />
     </div>
   );
 };
