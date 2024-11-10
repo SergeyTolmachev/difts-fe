@@ -6,7 +6,6 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { BottomModal } from "../../components/Modal/BottomModal";
 
-// Функция для получения стран
 const fetchCountries = async () => {
   const response = await axios.get("http://localhost:3000/countries");
   return response.data;
@@ -27,7 +26,6 @@ export const GiftComponent = () => {
     fetchTonPrice();
   }, []);
 
-  // Используем React Query для получения стран
   const {
     data: countries,
     error: countriesError,
@@ -37,10 +35,8 @@ export const GiftComponent = () => {
     queryFn: fetchCountries,
   });
 
-  // Обработка состояния загрузки для стран
   if (isCountriesLoading) return <div>Загрузка стран...</div>;
 
-  // Обработка ошибок для стран
   if (countriesError)
     return <div>Ошибка при получении стран: {countriesError.message}</div>;
 
@@ -61,11 +57,13 @@ export const GiftComponent = () => {
         Send a gift
       </button>
       <BottomModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <ul>
+        <div className={styles.country_list}>
           {countries.map((country) => (
-            <li key={country.id}>{country.name}</li>
+            <div className={styles.country_item} key={country.id}>
+              {country.name}
+            </div>
           ))}
-        </ul>
+        </div>
       </BottomModal>
       <TonConnectButton className={styles.connect_wallet_button} />
     </div>
