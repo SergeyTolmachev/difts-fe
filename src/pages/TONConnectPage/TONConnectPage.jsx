@@ -3,6 +3,7 @@ import { GiftComponent } from "@/pages/GiftPage/GiftComponent";
 import { Page } from "@/components/Page.jsx";
 import { useWalletStore } from "@/stores/WalletStoreProvider";
 import styles from "./TONConnectPage.module.scss";
+import {Link} from "react-router-dom";
 
 export function TONConnectPage() {
   const wallet = useTonWallet();
@@ -21,12 +22,11 @@ export function TONConnectPage() {
             etiam sed volutpat faucibus.
           </div>
           <TonConnectButton className={styles.connect_wallet_button} />
-          <button
-            className={styles.later_button}
-            onClick={() => console.log("Later clicked")}
-          >
-            Later
-          </button>
+          <Link to={'/products'}>
+            <button className={styles.later_button}>
+              Later
+            </button>
+          </Link>
         </div>
       </Page>
     );
