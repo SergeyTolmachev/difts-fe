@@ -13,6 +13,7 @@
   padding: 16px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .product_image {
@@ -47,4 +48,60 @@
   background-color: #f5f5f5;
   border-radius: 8px;
   margin: 0 auto;
+}
+
+.modal_title {
+  font-size: 24px;
+  margin-bottom: -5px;
+}
+
+.gift_img_modal {
+  font-size: 150px;
+}
+
+.modal_image {
+  width: 300px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.modal_description {
+  font-size: 16px;
+  margin-bottom: 30px;
+  max-width: 326px;
+  text-align: center;
+  color: #707579;
+}
+
+.modal_price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.ton_icon {
+  width: 16px;
+  height: auto;
+  margin-right: 4px;
+  margin-left: 10px;
+  fill: black;
+  position: relative;
+  top: 1px;
+}
+
+.send_gift_button {
+  padding: 10px 20px;
+  background-color: #4378ff; // Синий цвет
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 50px;
+  width: 326px;
+  font-size: 17px;
+
+  &:hover {
+    background-color: #0056b3; // Темнее при наведении
+  }
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ProductModal } from "@/components/ProductModal/ProductModal";
 import styles from "./ProductItem.module.scss";
+import tonIcon from "../../../assets/tonIcon.svg";
 
 const ProductItem = ({ products }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -31,9 +32,6 @@ const ProductItem = ({ products }) => {
             )}
             <h3 className={styles.product_title}>{product.name}</h3>
             <p className={styles.product_subtitle}>{product.description}</p>
-            <span className={styles.product_price}>
-              ${product.price.toFixed(2)}
-            </span>
           </div>
         ))}
       </div>
@@ -41,11 +39,28 @@ const ProductItem = ({ products }) => {
         <ProductModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
+          className={styles.modal}
         >
-          <h3>{selectedProduct.name}</h3>
-          <img src={selectedProduct.image} alt={selectedProduct.name} />
-          <p>{selectedProduct.description}</p>
-          <span>${selectedProduct.price.toFixed(2)}</span>
+          {selectedProduct.image ? (
+            <img
+              src={selectedProduct.image}
+              alt={selectedProduct.name}
+              className={styles.modal_image}
+            />
+          ) : (
+            <div className={styles.gift_img_modal}>🎁</div>
+          )}
+          <h3 className={styles.modal_title}>
+            {selectedProduct.name}
+            <span className={styles.modal_price}>
+              <img src={tonIcon} alt="TON" className={styles.ton_icon} />
+              {selectedProduct.price.toFixed(2)}
+            </span>
+          </h3>
+          <p className={styles.modal_description}>
+            {selectedProduct.description}
+          </p>
+          <button className={styles.send_gift_button}>Buy</button>
         </ProductModal>
       )}
     </>
