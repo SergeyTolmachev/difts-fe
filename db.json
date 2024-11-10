@@ -10,5 +10,147 @@
     { "id": 8, "name": "Испания" },
     { "id": 9, "name": "Япония" },
     { "id": 10, "name": "Китай" }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Товар 1",
+      "price": 100.0,
+      "image": "http://example.com/image1.jpg",
+      "description": "Описание товара 1"
+    },
+    {
+      "id": "2",
+      "name": "Товар 2",
+      "price": 150.0,
+      "image": "http://example.com/image2.jpg",
+      "description": "Описание товара 2"
+    },
+    {
+      "id": "3",
+      "name": "Товар 3",
+      "price": 200.0,
+      "image": "http://example.com/image3.jpg",
+      "description": "Описание товара 3"
+    },
+    {
+      "id": "4",
+      "name": "Товар 4",
+      "price": 250.0,
+      "image": "http://example.com/image4.jpg",
+      "description": "Описание товара 4"
+    },
+    {
+      "id": "5",
+      "name": "Товар 5",
+      "price": 300.0,
+      "image": "http://example.com/image5.jpg",
+      "description": "Описание товара 5"
+    },
+    {
+      "id": "6",
+      "name": "Товар 6",
+      "price": 350.0,
+      "image": "http://example.com/image6.jpg",
+      "description": "Описание товара 6"
+    },
+    {
+      "id": "7",
+      "name": "Товар 7",
+      "price": 400.0,
+      "image": "http://example.com/image7.jpg",
+      "description": "Описание товара 7"
+    },
+    {
+      "id": "8",
+      "name": "Товар 8",
+      "price": 450.0,
+      "image": "http://example.com/image8.jpg",
+      "description": "Описание товара 8"
+    },
+    {
+      "id": "9",
+      "name": "Товар 9",
+      "price": 500.0,
+      "image": "http://example.com/image9.jpg",
+      "description": "Описание товара 9"
+    },
+    {
+      "id": "10",
+      "name": "Товар 10",
+      "price": 550.0,
+      "image": "http://example.com/image10.jpg",
+      "description": "Описание товара 10"
+    },
+    {
+      "id": "11",
+      "name": "Товар 11",
+      "price": 600.0,
+      "image": "http://example.com/image11.jpg",
+      "description": "Описание товара 11"
+    },
+    {
+      "id": "12",
+      "name": "Товар 12",
+      "price": 650.0,
+      "image": "http://example.com/image12.jpg",
+      "description": "Описание товара 12"
+    },
+    {
+      "id": "13",
+      "name": "Товар 13",
+      "price": 700.0,
+      "image": "http://example.com/image13.jpg",
+      "description": "Описание товара 13"
+    },
+    {
+      "id": "14",
+      "name": "Товар 14",
+      "price": 750.0,
+      "image": "http://example.com/image14.jpg",
+      "description": "Описание товара 14"
+    },
+    {
+      "id": "15",
+      "name": "Товар 15",
+      "price": 800.0,
+      "image": "http://example.com/image15.jpg",
+      "description": "Описание товара 15"
+    },
+    {
+      "id": "16",
+      "name": "Товар 16",
+      "price": 850.0,
+      "image": "http://example.com/image16.jpg",
+      "description": "Описание товара 16"
+    },
+    {
+      "id": "17",
+      "name": "Товар 17",
+      "price": 900.0,
+      "image": "http://example.com/image17.jpg",
+      "description": "Описание товара 17"
+    },
+    {
+      "id": "18",
+      "name": "Товар 18",
+      "price": 950.0,
+      "image": "http://example.com/image18.jpg",
+      "description": "Описание товара 18"
+    },
+    {
+      "id": "19",
+      "name": "Товар 19",
+      "price": 1000.0,
+      "image": "http://example.com/image19.jpg",
+      "description": "Описание товара 19"
+    },
+    {
+      "id": "20",
+      "name": "Товар 20",
+      "price": 1050.0,
+      "image": "http://example.com/image20.jpg",
+      "description": "Описание товара 20"
+    }
   ]
 }
