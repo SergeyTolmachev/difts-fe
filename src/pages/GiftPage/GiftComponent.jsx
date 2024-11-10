@@ -1,6 +1,5 @@
 import styles from "./GiftComponent.module.scss";
 import GiftIcon from "../../../assets/tonIcon.svg";
-import { TonConnectButton } from "@tonconnect/ui-react";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -70,8 +69,8 @@ export const GiftComponent = () => {
         {tonPrice}
       </div>
       <div className={styles.gift_img}>🎁</div>
-      <div className={styles.gift_title}>Title</div>
-      <div className={styles.gift_description}>description</div>
+      <div className={styles.gift_title}>Send joy instantly!</div>
+      {/* <div className={styles.gift_description}>description</div> */}
 
       <button
         className={styles.send_gift_button}
